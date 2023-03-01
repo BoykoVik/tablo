@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: url('Abstract-Technology-Background-250119211.jpg') no-repeat;
+    background-size: 100%; /* Масштабируем фон */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 150px;
+}
+.runningline {
+    width: 100%;
+    position: absolute;
+    height: 50px;
+    top: 38px;
+    background: rgba(255, 255, 255, 0.2);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 33px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+.line {
+    display: flex;
+    flex-direction: row;
+}
+.mainblock {
+    height: auto;
+    width: auto;
+    min-width: 1332px;
+    min-height: 875px;
+    /*background: rgba(255, 255, 255, 0.15);*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.rightblock {
+    height: auto;
+    width: auto;
+    min-width: 420px;
+    min-height: 880px;
+    font-family: sans-serif;
+}
+.datetime {
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    min-height: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.dayblock {
+    height: auto;
+    width: auto;
+    min-width: 420px;
+    min-height: 590px;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.year {
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 121px;
+    color: #FFFFFF;
+}
+.date, .time, .datep, .namep, .aboutp {
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 50px;
+    color: #FFFFFF;
+}
+.aday {
+    display: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    max-width: 400px;
+    max-height: 590px;
+    padding: 10px;
+}
+.aday p {
+    line-height: 30px;
+    padding-bottom: 15px;
+}
+.datep, .namep {
+    font-size: 32px;
+}
+.aboutp {
+    font-size: 24px;
+    display: flex;
+    word-wrap: break-word;
+}
+/*слайдер*/
+.mySlides {
+    /*display: none;*/
+    width: auto;
+    height: auto;
+    max-width: 1332px;
+    max-height: 875px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.mySlides img {
+    width: auto;
+    height: auto;
+    max-width: 1332px;
+    max-height: 875px;
+}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 2.5s;
+}
+@-webkit-keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+
+@keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
