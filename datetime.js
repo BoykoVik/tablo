@@ -49,4 +49,4 @@ function getDate(){
     document.getElementsByClassName('date')[0].innerHTML = day +' '+ monthstr;
     document.getElementsByClassName('time')[0].innerHTML = hours +':'+ minutes;
 }
-setTimeout(getDate, 10);
+setTimeout(getDate, 10000);
