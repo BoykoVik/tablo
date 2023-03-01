@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information</title>
-    <link rel="stylesheet" href="main.css" media="screen">
+    <link rel="stylesheet" href="{% static 'tablo/css/main.css' %}" media="screen">
 </head>
 <body>
     <div class="runningline">
@@ -46,7 +47,7 @@
             </div>
         </div>
     </div>
-    <script src="main.js"></script>
-    <script src="datetime.js"></script>
+    <script src="{% static 'tablo/js/main.js' %}"></script>
+    <script src="{% static 'tablo/js/datetime.js' %}"></script>
 </body>
 </html>
