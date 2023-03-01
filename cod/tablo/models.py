@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core.validators import MaxValueValidator, MinValueValidator
 MONTH = [
     ('1', 'Январь'),
     ('2', 'Февраль'),
@@ -30,18 +30,33 @@ class Slides(models.Model):
         ordering = ['title']
 # Модель праздников
 class Holidays(models.Model):
-    day = models.IntegerField(blank = False, null = False, max_value = 31, min_value = 1, verbose_name='День')
-    month = models.CharField(blank=True, max_length=20, choices = MONTH, verbose_name='Месяц')
+    day = models.IntegerField(blank = False, null = False, validators=[MinValueValidator(1), MaxValueValidator(30)], verbose_name='День')
+    month = models.CharField(blank=False, max_length=20, choices = MONTH, verbose_name='Месяц')
+    year = models.IntegerField(blank = False, null = True, validators=[MinValueValidator(1), MaxValueValidator(2050)], verbose_name='Год')
     name = models.CharField(blank=False, max_length=50, verbose_name='Наименование праздника')
     photo = models.ImageField(blank=True, upload_to='holidays/', verbose_name='Изображение')
     about = models.TextField(blank=False, max_length=1000, verbose_name='Описание праздника')
-    rank = models.IntegerField(blank = False, null = True, verbose_name='Порядок вывода (очередность на странице)')
     isactive = models.BooleanField(default=False, verbose_name='отображать')
 
     def __str__(self):
         return self.name 
 
     class Meta:
-        verbose_name = 'Вид потолка'
-        verbose_name_plural = 'Виды потолков'
-        ordering = ['rank']
+        verbose_name = 'Праздник'
+        verbose_name_plural = 'Праздники'
+        ordering = ['month']
+# Модель бегущей строки
+class Runningrow(models.Model):
+    day = models.IntegerField(blank = False, null = False, validators=[MinValueValidator(1), MaxValueValidator(30)], verbose_name='День')
+    month = models.CharField(blank=True, max_length=20, choices = MONTH, verbose_name='Месяц')
+    name = models.CharField(blank=False, max_length=50, verbose_name='Наименование события')
+    about = models.TextField(blank=False, max_length=1000, verbose_name='Текст строки')
+    isactive = models.BooleanField(default=False, verbose_name='отображать')
+
+    def __str__(self):
+        return self.name 
+
+    class Meta:
+        verbose_name = 'Бегущая строка'
+        verbose_name_plural = 'Бегущие строки'
+        ordering = ['name']
