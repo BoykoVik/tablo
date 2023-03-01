@@ -29,10 +29,12 @@ class Slides(models.Model):
         verbose_name_plural = 'Слайды'
         ordering = ['title']
 # Модель праздников
-class Ceilings(models.Model):
-    name = models.CharField(blank=False, max_length=50, verbose_name='Наименование вида потолка')
-    photo = models.ImageField(blank=True, upload_to='ceilings/', default='products/noimg.png', verbose_name='Изображение')
-    about = models.TextField(blank=False, max_length=1000, verbose_name='Описание потолка')
+class Holidays(models.Model):
+    day = models.IntegerField(blank = False, null = False, max_value = 31, min_value = 1, verbose_name='День')
+    month = models.CharField(blank=True, max_length=20, choices = MONTH, verbose_name='Месяц')
+    name = models.CharField(blank=False, max_length=50, verbose_name='Наименование праздника')
+    photo = models.ImageField(blank=True, upload_to='holidays/', verbose_name='Изображение')
+    about = models.TextField(blank=False, max_length=1000, verbose_name='Описание праздника')
     rank = models.IntegerField(blank = False, null = True, verbose_name='Порядок вывода (очередность на странице)')
     isactive = models.BooleanField(default=False, verbose_name='отображать')
 
