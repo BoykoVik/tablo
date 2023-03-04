@@ -6,7 +6,7 @@ function getDate(){
     var day = date.getDate()
     var month = date.getMonth() + 1;
     var hours = date.getHours();
-    var minutes = date.getMinutes();
+    var time = new Date().toLocaleTimeString().slice(0,-3);
     switch(month) {
         case 1:
             monthstr = 'января';
@@ -47,6 +47,6 @@ function getDate(){
     }
     document.getElementsByClassName('year')[0].innerHTML = year;
     document.getElementsByClassName('date')[0].innerHTML = day +' '+ monthstr;
-    document.getElementsByClassName('time')[0].innerHTML = hours +':'+ minutes;
+    document.getElementsByClassName('time')[0].innerHTML = time;
 }
 setTimeout(getDate, 10000);
