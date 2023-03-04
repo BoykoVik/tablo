@@ -23,20 +23,25 @@
     </div>
     <div class="rightblock">
         <div class="datetime">
-            <p class="year">2023</p>
-            <p class="date">1 марта</p>
-            <p class="time">12:23</p>
+            <p class="year"></p>
+            <p class="date"></p>
+            <p class="time"></p>
         </div>
         <div class="dayblock">
             {% for el in holids %}
                 <div class="aday">
-                    <p class="datep">{{ el.day }} {{ el.month }} {{ el.year }}</p>
+                    <p class="datep">{{ el.day }} {{ el.month }}
+                        {% if el.year %}
+                            {{ el.year }} г.
+                        {% endif %}
+                    </p>
                     <p class="namep">{{ el.name }}</p>
                     <p class="aboutp">{{ el.about }}</p>
                 </div>
             {% endfor %}
         </div>
     </div>
+    <img class="logo" src="/static/tablo/imgs/logo.gif" alt="">
     <script src="{% static 'tablo/js/main.js' %}"></script>
     <script src="{% static 'tablo/js/datetime.js' %}"></script>
 </body>

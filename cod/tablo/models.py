@@ -32,7 +32,7 @@ class Slides(models.Model):
 class Holidays(models.Model):
     day = models.IntegerField(blank = False, null = False, validators=[MinValueValidator(1), MaxValueValidator(30)], verbose_name='День')
     month = models.CharField(blank=False, max_length=20, choices = MONTH, verbose_name='Месяц')
-    year = models.IntegerField(blank = False, null = True, validators=[MinValueValidator(1), MaxValueValidator(2050)], verbose_name='Год')
+    year = models.IntegerField(blank = True, null = True, validators=[MinValueValidator(1), MaxValueValidator(2050)], verbose_name='Год')
     name = models.CharField(blank=False, max_length=50, verbose_name='Наименование праздника')
     photo = models.ImageField(blank=True, upload_to='holidays/', verbose_name='Изображение')
     about = models.TextField(blank=False, max_length=1000, verbose_name='Описание праздника')

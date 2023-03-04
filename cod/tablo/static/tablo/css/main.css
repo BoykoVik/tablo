@@ -31,6 +31,10 @@ body {
 .line {
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+pre {
+    font-family: sans-serif;
 }
 .mainblock {
     height: auto;
@@ -135,4 +139,11 @@ to {opacity: 1}
 @keyframes fade {
 from {opacity: .4}
 to {opacity: 1}
+}
+.logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    height: 200px;
+    width: auto;
 }
