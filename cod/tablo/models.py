@@ -45,6 +45,7 @@ class Holidays(models.Model):
         verbose_name = 'Праздник'
         verbose_name_plural = 'Праздники'
         ordering = ['month']
+        
 # Модель бегущей строки
 class Runningrow(models.Model):
     day = models.IntegerField(blank = False, null = False, validators=[MinValueValidator(1), MaxValueValidator(30)], verbose_name='День')
